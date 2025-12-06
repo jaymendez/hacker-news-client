@@ -48,9 +48,8 @@ export default function Panel() {
                 leave='transform transition ease-in-out duration-500 sm:duration-700'
                 leaveFrom='translate-x-0'
                 leaveTo='translate-x-full'
-                className='w-screen'
               >
-                <div className='flex flex-col h-full py-6 space-y-6 overflow-y-scroll bg-white shadow-xl'>
+                <div className='w-screen flex flex-col h-full py-6 space-y-6 overflow-y-scroll bg-white shadow-xl'>
                   <header className='px-4 sm:px-6'>
                     <div className='flex items-start justify-between space-x-3'>
                       <StoryView storyId={story.id} showCompleteStory={true} />

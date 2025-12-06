@@ -140,16 +140,16 @@ export default function StoryView({
                 ? '/show'
                 : '/ask'
             }
-          >
-            <a className='inline-block'>
-              <span className='inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium leading-5 bg-orange-100 text-orange-800'>
-                {storyType === StoryType.JOB
-                  ? 'Jobs HN'
-                  : storyType === StoryType.SHOW
-                  ? 'Show HN'
-                  : 'Ask HN'}
-              </span>
-            </a>
+            className='inline-block'>
+
+            <span className='inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium leading-5 bg-orange-100 text-orange-800'>
+              {storyType === StoryType.JOB
+                ? 'Jobs HN'
+                : storyType === StoryType.SHOW
+                ? 'Show HN'
+                : 'Ask HN'}
+            </span>
+
           </Link>
         </div>
         <a className='block cursor-pointer' onClick={() => openStory()}>
@@ -263,5 +263,5 @@ export default function StoryView({
         </div>
       </div>
     </>
-  )
+  );
 }

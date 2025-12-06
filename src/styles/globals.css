@@ -1,12 +1,10 @@
-@tailwind base;
+@import 'tailwindcss';
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 }
-
-@tailwind components;
-
-@tailwind utilities;
 
 .mr-auto\:important {
   margin-right: auto !important;

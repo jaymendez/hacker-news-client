@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { Listbox } from '@headlessui/react'
+import { Label, Listbox, ListboxButton } from '@headlessui/react'
 import classNames from 'classnames'
 
 export type ListBoxOption = {
@@ -21,11 +21,11 @@ export default function ListBox({
   return (
     <Listbox value={selectedOption} onChange={setSelectedOption}>
       <div className='space-y-1'>
-        <Listbox.Label className='block text-sm font-medium leading-5 text-gray-700'>
+        <Label className='block text-sm font-medium leading-5 text-gray-700'>
           {label}
-        </Listbox.Label>
+        </Label>
         <div className='relative'>
-          <Listbox.Button as={Fragment}>
+          <ListboxButton as={Fragment}>
             <span className='inline-block w-full rounded-md shadow-sm'>
               <button
                 type='button'
@@ -59,7 +59,7 @@ export default function ListBox({
                 </span>
               </button>
             </span>
-          </Listbox.Button>
+          </ListboxButton>
           <div className='absolute w-full mt-1 bg-white rounded-md shadow-lg'>
             <Listbox.Options className='py-1 overflow-auto text-base leading-6 rounded-md shadow-xs max-h-60 focus:outline-none sm:text-sm sm:leading-5'>
               {options.map((option: ListBoxOption) => (

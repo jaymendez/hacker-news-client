@@ -8,14 +8,16 @@
     "start": "next start"
   },
   "dependencies": {
-    "@headlessui/react": "0.1.4-alpha.1",
+    "@headlessui/react": "^2.2.9",
+    "@tailwindcss/postcss": "^4.1.17",
     "classnames": "^2.2.6",
     "javascript-time-ago": "^2.0.13",
     "next": "13.5.11",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-hotjar": "^2.2.1",
-    "react-query": "^2.23.0"
+    "react-query": "^2.23.0",
+    "tailwind": "^4.0.0"
   },
   "devDependencies": {
     "@tailwindcss/ui": "^0.6.2",
@@ -23,7 +25,7 @@
     "@types/react": "^16.9.49",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
-    "tailwindcss": "^1.8.10",
+    "tailwindcss": "^4.1.17",
     "typescript": "5.9.3"
   }
 }

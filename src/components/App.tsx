@@ -16,10 +16,11 @@ export default function App({ children }: { children: ReactNode }) {
     <>
       <Head>
         <title>
-          Hacker News{' '}
-          {router.pathname !== '/'
-            ? ` | ${toTitleCase(router.pathname.slice(1))}`
-            : ''}
+          {`Hacker News${
+            router.pathname !== '/'
+              ? ` | ${toTitleCase(router.pathname.slice(1))}`
+              : ''
+          }`}
         </title>
       </Head>
       <div className='min-h-screen bg-white'>
@@ -27,7 +28,7 @@ export default function App({ children }: { children: ReactNode }) {
           <div className='px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
             <div className='flex justify-between h-16'>
               <div className='flex'>
-                <div className='flex items-center flex-shrink-0'>
+                <div className='flex items-center shrink-0'>
                   <a
                     href='/'
                     className='cursor-pointer'
@@ -296,7 +297,7 @@ export default function App({ children }: { children: ReactNode }) {
       </div>
 
       <footer className='fixed bottom-0 z-10 w-screen bg-white border-t'>
-        <div className='max-w-screen-xl px-4 py-4 mx-auto sm:px-6 md:flex md:items-center md:justify-between lg:px-8'>
+        <div className='max-w-7xl px-4 py-4 mx-auto sm:px-6 md:flex md:items-center md:justify-between lg:px-8'>
           <div className='flex justify-center space-x-6 md:order-2'>
             <a
               href='https://blog.bhanuteja.dev'
