@@ -44,7 +44,7 @@ export default function StoryView({
 
   const { setSelectedStoryId, setIsPanelOpen } = useContext(StoryContext)
   const { query } = useContext(SearchContext)
-
+  
   useEffect(() => {
     if (isLoading || error) {
       return

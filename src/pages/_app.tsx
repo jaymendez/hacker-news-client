@@ -2,11 +2,18 @@ import '../styles/globals.css'
 
 import type { AppProps } from 'next/app'
 import { App } from '../components'
-import { QueryCache, ReactQueryCacheProvider } from 'react-query'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import { createContext, useEffect, useState } from 'react'
 import { hotjar } from 'react-hotjar'
 
-const queryCache = new QueryCache()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 1,
+    },
+  },
+})
 
 export const StoryContext = createContext<{
   selectedStoryId: number
@@ -35,7 +42,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [])
 
   return (
-    <ReactQueryCacheProvider queryCache={queryCache}>
+    <QueryClientProvider client={queryClient}>
       <SearchContext.Provider value={{ query, setQuery }}>
         <StoryContext.Provider
           value={{
@@ -50,7 +57,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </App>
         </StoryContext.Provider>
       </SearchContext.Provider>
-    </ReactQueryCacheProvider>
+    </QueryClientProvider>
   )
 }
 

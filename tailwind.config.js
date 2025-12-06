@@ -1,55 +1,33 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  purge: {
-    content: [
-      './src/components/**/*.{js,ts,jsx,tsx}',
-      './src/pages/**/*.{js,ts,jsx,tsx}',
-    ],
-  },
+  content: [
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       opacity: {
-        // prettier-ignore
-        '30': '0.3',
-      },
-      customForms: (theme) => {
-        return {
-          default: {
-            input: {
-              '&:focus': {
-                boxShadow: theme('boxShadow.outline-orange'),
-                borderColor: theme('colors.orange.600'),
-              },
-            },
-          },
-        }
-      },
-      typography: (theme) => {
-        return {
-          default: {
-            css: {
-              a: {
-                color: theme('colors.orange.600'),
-              },
-            },
-          },
-        }
+        30: "0.3",
       },
       colors: {
-        'accent-1': 'cyan',
+        "accent-1": "cyan",
       },
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ["Inter var", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            a: {
+              color: "#ea580c",
+              "&:hover": {
+                color: "#c2410c",
+              },
+            },
+          },
+        },
       },
     },
   },
-  variants: {
-    opacity: ['responsive', 'hover', 'focus', 'disabled'],
-  },
-  plugins: [require('@tailwindcss/ui')],
-}
+  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
+};

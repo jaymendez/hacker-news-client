@@ -30,7 +30,7 @@ export default function StoriesList({ urlKey }: { urlKey: string }) {
     comments: number
   }
 
-  const [storiesMap, setStoriesMap] = useState<Record<number, StoryNode>>({})
+  const [storiesMap, setStoriesMap] = useState<Record<number, StoryNode>>({});
 
   const setStoryNode = ({
     storyId,
@@ -38,17 +38,17 @@ export default function StoriesList({ urlKey }: { urlKey: string }) {
     time,
     comments,
   }: {
-    storyId: number
-    points: number
-    time: number
-    comments: number
+    storyId: number;
+    points: number;
+    time: number;
+    comments: number;
   }) =>
-    setStoriesMap({
-      ...storiesMap,
+    setStoriesMap((prevStoriesMap) => ({
+      ...prevStoriesMap,
       [storyId]: { storyId, points, time, comments },
-    })
+    }));
 
-  const [currentPage, setCurrentPage] = useState(0)
+  const [currentPage, setCurrentPage] = useState(0);
   const [currentlySortBy, setCurrentlySortBy] = useState(POPULARITY)
   const [currentlyOrderIn, setCurrentlyOrderIn] = useState(DESCENDING)
   const [currentFilter, setCurrentFilter] = useState(ALL_TIME)
@@ -158,7 +158,7 @@ export default function StoriesList({ urlKey }: { urlKey: string }) {
                 </div>
               )}
             </div>
-
+              {console.log('Rendering storiesList', storyIds.length)}
             {storyIds.map((storyId: number) => (
               <StoryView
                 currentFilter={currentFilter}
